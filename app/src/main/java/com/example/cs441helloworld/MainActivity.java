@@ -11,6 +11,7 @@ public class MainActivity extends AppCompatActivity {
 
     TextView helloText;
     Button helloButton;
+    int toggle = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +22,13 @@ public class MainActivity extends AppCompatActivity {
         helloButton = (Button) findViewById(R.id.hello_button);
     }
     public void onHelloClick(View view){
-        helloText.setTextSize(64);
+        if(toggle==1) {
+            helloText.setTextSize(64);
+            toggle = 0;
+        }
+        else{
+            helloText.setTextSize(30);
+            toggle = 1;
+        }
     }
 }
